@@ -1,9 +1,11 @@
 //selects stopwatch ui element
 const watch = document.querySelector("#stopwatch");
-
+const testTimer = document.querySelector("#testTimer");
 //defines variables
 let millisecound = 0;
 let timer;
+
+let second = 0;
 
 //start time function
 function timeStart() {
@@ -11,7 +13,9 @@ function timeStart() {
     clearInterval(timer);
     timer = setInterval(() => {
         millisecound += 10;
-
+        // second += 1000;
+        testTimer.innerHTML = millisecound / 1000; //my code to test what miliseconds looks like
+        // testTimer.innerHTML = second;
         let dateTimer = new Date(millisecound);
 
         watch.innerHTML =
